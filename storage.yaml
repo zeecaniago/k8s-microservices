@@ -1,0 +1,30 @@
+# to specify to WHAT volume we want k8s 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+spec:
+  # allows ops to setup different classes of storage
+  # this process is called binding
+  storageClassName: mylocalstorage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+# to specify HOW we want it to be implemented
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-storage
+spec:
+  # allows ops to setup different classes of storage
+  storageClassName: mylocalstorage
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath: 
+    path: "/mnt/some new/directory/structure"
+    type: DirectoryOrCreate          
