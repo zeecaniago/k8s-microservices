@@ -11,8 +11,8 @@ spec:
   ports:
     - name: http
       port: 80
-      nodePort: 30080
-  type: NodePort
+  # change the service type to LoadBalancer for Cloud environment    
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service
@@ -27,11 +27,11 @@ spec:
   ports:
     - name: http
       port: 8161
-      nodePort: 30010
       # This is an endpoint for other services 
     - name: endpoint
-      port: 61616  
-  type: NodePort
+      port: 61616
+  # no longer needed for production deployment      
+  type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
