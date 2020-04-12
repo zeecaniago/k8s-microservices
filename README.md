@@ -11,4 +11,4 @@ Prototype to show how to deploy and manage Microservices with Kubernetes
 
 ## Elasticsearch, Fluentd and Kibana
 
-![ELK](https://user-images.githubusercontent.com/6102063/79061485-9bff2a00-7c45-11ea-831a-3b8d1cd2f531.png)
+![ELK](https://user-images.githubusercontent.com/6102063/79061605-c7364900-7c46-11ea-8910-87861ac28def.png)
